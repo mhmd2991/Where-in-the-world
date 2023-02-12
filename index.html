@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,131 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Countries API</title>
 </head>
+
 <body>
     <header>
         <div class="container">
             <div class="row">
                 <h1>Where in the world?</h1>
-                <div class="dark__mode">
+                <div class="dark__mode" id="darkMode">
+                    <i class="fa-regular fa-sun"></i>
                     <i class="fa-regular fa-moon"></i>
                     <span>dark mode</span>
                 </div>
             </div>
         </div>
     </header>
+    <main>
+        <section class="search__box">
+            <div class="container">
+                <form action="#">
+                    <div class="form__group">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search for a country" id="searchBar">
+                    </div>
+                    <div class="form__group" id="selectBox">
+                        <div class="form__title">
+                            <h4>Filter by Region</h4>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <ul id="menuBox">
+                            <li data-value="Africa">Africa</li>
+                            <li data-value="America">America</li>
+                            <li data-value="Asia">Asia</li>
+                            <li data-value="Europe">Europe</li>
+                            <li data-value="Oceania">Oceania</li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="country__list">
+            <div class="container">
+                <div class="row">
+                    <div class="country__box">
+                        <div class="country__img">
+                            <img src="ax.png" alt="">
+                        </div>
+                        <div class="country__details">
+                            <h4>Åland Islands</h4>
+                            <ul>
+                                <li><strong>Population:</strong> <span>28875</span></li>
+                                <li><strong>Region:</strong> <span>Europe</span></li>
+                                <li><strong>Capital:</strong> <span>Mariehamn</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="country__box">
+                        <div class="country__img">
+                            <img src="ax.png" alt="">
+                        </div>
+                        <div class="country__details">
+                            <h4>Åland Islands</h4>
+                            <ul>
+                                <li><strong>Population:</strong> <span>28875</span></li>
+                                <li><strong>Region:</strong> <span>Europe</span></li>
+                                <li><strong>Capital:</strong> <span>Mariehamn</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="country__box">
+                        <div class="country__img">
+                            <img src="ax.png" alt="">
+                        </div>
+                        <div class="country__details">
+                            <h4>Åland Islands</h4>
+                            <ul>
+                                <li><strong>Population:</strong> <span>28875</span></li>
+                                <li><strong>Region:</strong> <span>Europe</span></li>
+                                <li><strong>Capital:</strong> <span>Mariehamn</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="country__box">
+                        <div class="country__img">
+                            <img src="ax.png" alt="">
+                        </div>
+                        <div class="country__details">
+                            <h4>Åland Islands</h4>
+                            <ul>
+                                <li><strong>Population:</strong> <span>28875</span></li>
+                                <li><strong>Region:</strong> <span>Europe</span></li>
+                                <li><strong>Capital:</strong> <span>Mariehamn</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="country__box">
+                        <div class="country__img">
+                            <img src="ax.png" alt="">
+                        </div>
+                        <div class="country__details">
+                            <h4>Åland Islands</h4>
+                            <ul>
+                                <li><strong>Population:</strong> <span>28875</span></li>
+                                <li><strong>Region:</strong> <span>Europe</span></li>
+                                <li><strong>Capital:</strong> <span>Mariehamn</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="country__box">
+                        <div class="country__img">
+                            <img src="ax.png" alt="">
+                        </div>
+                        <div class="country__details">
+                            <h4>Åland Islands</h4>
+                            <ul>
+                                <li><strong>Population:</strong> <span>28875</span></li>
+                                <li><strong>Region:</strong> <span>Europe</span></li>
+                                <li><strong>Capital:</strong> <span>Mariehamn</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 <script src="https://kit.fontawesome.com/9e5ba2e3f5.js" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
+
 </html>

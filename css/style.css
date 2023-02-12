@@ -18,7 +18,7 @@
     /*(Light Mode Background)*/
     --veryLightGray: hsl(0, 0%, 98%);
     /*(Dark Mode Text & Light Mode Elements)*/
-    --White: hsl(0, 0%, 100%);
+    --white: hsl(0, 0%, 100%);
 }
 
 html {
@@ -29,6 +29,13 @@ html {
 body {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.4rem;
+    background-color: var(--veryLightGray);
+    color: var(--darkBlueText);
+    transition: all .2s linear;
+}
+
+ul {
+    list-style: none;
 }
 
 .container {
@@ -72,8 +79,9 @@ body {
 /*Start Header*/
 header {
     padding: 2rem 0;
-    background-color: var(--White);
-    box-shadow: 0rem -.5rem 1rem rgb(0 0 0 / .5);
+    background-color: var(--white);
+    border-bottom: 0.1rem solid rgba(0 0 0 / 10%);
+
 }
 
 header .container .row {
@@ -87,10 +95,28 @@ header .container .row h1 {
 }
 
 header .container .row .dark__mode {
+    position: relative;
     display: flex;
     align-items: center;
     gap: .5rem;
     cursor: pointer;
+}
+
+header .container .row .dark__mode i {
+    position: absolute;
+    left: -2rem;
+    transition: all .3s ease;
+}
+
+header .container .row .dark__mode .fa-moon {
+    visibility: hidden;
+    opacity: 0;
+}
+
+header .container .row .dark__mode.active .fa-moon {
+    transform: rotate(360deg);
+    visibility: visible;
+    opacity: 1;
 }
 
 header .container .row .dark__mode span {
@@ -100,3 +126,165 @@ header .container .row .dark__mode span {
 }
 
 /*End Header*/
+/*Start Main*/
+main {
+    padding: 4rem 0;
+}
+
+/*End Main*/
+/*Start Search Box Section*/
+.search__box .container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.search__box .container form .form__group {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--white);
+    padding: 1.5rem 2.5rem;
+    flex-basis: 30%;
+    border-radius: .5rem;
+    box-shadow: 0 -.2rem 1.5rem rgba(0 0 0 / 10%);
+}
+
+.search__box .container form .form__group:nth-of-type(2) {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: auto;
+    cursor: pointer;
+}
+
+.search__box .container form .form__group .form__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.search__box .container form .form__group h4 {
+    font-weight: 600;
+}
+
+.search__box .container form .form__group .form__title i {
+    font-size: 1.2rem;
+    transition: all .3s ease;
+}
+
+.search__box .container form .form__group i {
+    color: var(--darkGray);
+}
+
+.search__box .container form .form__group input {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.search__box .container form .form__group input::placeholder {
+    color: var(--darkGray);
+}
+
+.search__box .container form .form__group input:focus::placeholder {
+    opacity: 0;
+}
+
+.search__box .container form .form__group ul {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    background-color: var(--white);
+    width: 100%;
+    padding: 1.5rem 1.5rem;
+    border-radius: .5rem;
+    font-weight: 600;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    box-shadow: 0 -.2rem 1.5rem rgba(0 0 0 / 10%);
+    transition: all .3s ease;
+}
+
+.search__box .container form .form__group:nth-of-type(2).active ul {
+    top: 6rem;
+    visibility: visible;
+    opacity: 1;
+}
+
+.search__box .container form .form__group:nth-of-type(2).active i {
+    transform: rotate(180deg);
+}
+
+.search__box .container form .form__group ul li {
+    padding: 1rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.search__box .container form .form__group ul li:hover {
+    background-color: var(--veryLightGray);
+}
+
+
+/*End Search Box Section*/
+/*Start Country List Section*/
+.country__list {
+    padding: 4rem 0;
+}
+
+.country__list .container .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
+    row-gap: 4rem;
+    column-gap: 3rem;
+}
+
+.country__list .container .row .country__box {
+    background-color: var(--white);
+    border-radius: 0 0 .5rem .5rem;
+    box-shadow: 0 -0.2rem 1.5rem rgb(0 0 0 / 10%);
+}
+
+.country__list .container .row .country__box .country__img img {
+    width: 100%;
+}
+
+.country__list .container .row .country__box .country__details {
+    padding: 2rem;
+}
+
+.country__list .container .row .country__box .country__details h4 {
+    font-size: 2rem;
+}
+
+.country__list .container .row .country__box .country__details ul {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.country__list .container .row .country__box .country__details ul li span {
+    font-weight: 600;
+}
+
+/*End Country List Section*/
+/*Responsive*/
+@media(min-width: 768px) {
+    .search__box .container form {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .search__box .container form .form__group:nth-of-type(2) {
+        padding: 1.5rem 3.5rem;
+    }
+
+    .search__box .container form .form__group .form__title {
+        gap: 2rem;
+    }
+}
