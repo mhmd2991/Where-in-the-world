@@ -68,3 +68,35 @@ body {
         width: 1320px
     }
 }
+
+/*Start Header*/
+header {
+    padding: 2rem 0;
+    background-color: var(--White);
+    box-shadow: 0rem -.5rem 1rem rgb(0 0 0 / .5);
+}
+
+header .container .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container .row h1 {
+    font-size: 2rem;
+}
+
+header .container .row .dark__mode {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+}
+
+header .container .row .dark__mode span {
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/*End Header*/
