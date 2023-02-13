@@ -92,8 +92,11 @@ function createEl(el) {
     countryDetails.className = "country__details";
     //Create Title Country Name
     let title = document.createElement('h4');
+    let a = document.createElement('a');
     let titleText = document.createTextNode(el.name);
-    title.appendChild(titleText);
+    a.appendChild(titleText);
+    a.href = `country-details.html?countryName=${el.name}`;
+    title.appendChild(a);
     //Create Population Div
     let populationDiv = document.createElement('div');
     let populationStrong = document.createElement('strong');
