@@ -23,19 +23,19 @@ darkMode.addEventListener("click", () => {
 
 //Create Our Elements
 let parms = new URLSearchParams(document.location.search);
-let id = parms.get("countryName");
+let id = parms.get("countryName").toLowerCase();
 
 fetch('js/data.json')
     .then((response) => response.json())
     .then((data) =>
         data.forEach((item) => {
-            if (item.numericCode === id) {
+            if (item.name.toLowerCase() === id) {
                 row.innerHTML = `
                 <div class="image__container">
                 <img src="${item.flags.png}" alt="">
             </div>
             <div class="country__details">
-                <h4><a href="country-details.html?countryName=${item.numericCode}">${item.name}<a/></h4>
+                <h4><a href="country-details.html?countryName=${item.name}">${item.name}<a/></h4>
                 <div class="details">
                     <div class="list__content">
                         <ul>
@@ -58,9 +58,9 @@ fetch('js/data.json')
                     <div class="border__countries">
                         <h5>border countries:</h5>
                         <div class="border__content">
-                            ${item.borders.map((el) => {
+                            ${item.hasOwnProperty("borders") ? item.borders.map((el) => {
                                 return `<span>${el}</span>`;
-                            }).join('')}
+                            }).join('') : ""}
                         </div>
                     </div>
                 </div>
