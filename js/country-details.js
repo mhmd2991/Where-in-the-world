@@ -23,13 +23,13 @@ darkMode.addEventListener("click", () => {
 
 //Create Our Elements
 let parms = new URLSearchParams(document.location.search);
-let id = parms.get("countryName").toLowerCase();
+let id = parms.get("countryName");
 
 fetch('js/data.json')
     .then((response) => response.json())
     .then((data) =>
         data.forEach((item) => {
-            if (item.name.toLowerCase() === id) {
+            if (item.numericCode === id) {
                 row.innerHTML = `
                 <div class="image__container">
                 <img src="${item.flags.png}" alt="">
