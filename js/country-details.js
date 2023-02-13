@@ -35,7 +35,7 @@ fetch('js/data.json')
                 <img src="${item.flags.png}" alt="">
             </div>
             <div class="country__details">
-                <h4><a href="country-details.html?countryName=${item.name}">${item.name}<a/></h4>
+                <h4><a href="country-details.html?countryName=${item.numericCode}">${item.name}<a/></h4>
                 <div class="details">
                     <div class="list__content">
                         <ul>

@@ -95,7 +95,7 @@ function createEl(el) {
     let a = document.createElement('a');
     let titleText = document.createTextNode(el.name);
     a.appendChild(titleText);
-    a.href = `country-details.html?countryName=${el.name}`;
+    a.href = `country-details.html?countryName=${el.numericCode}`;
     title.appendChild(a);
     //Create Population Div
     let populationDiv = document.createElement('div');
