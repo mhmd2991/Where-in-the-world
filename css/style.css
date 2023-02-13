@@ -238,7 +238,7 @@ main {
 
 .country__list .container .row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
     row-gap: 4rem;
     column-gap: 3rem;
 }
@@ -251,6 +251,7 @@ main {
 
 .country__list .container .row .country__box .country__img img {
     width: 100%;
+    height: 18rem;
 }
 
 .country__list .container .row .country__box .country__details {
@@ -261,18 +262,99 @@ main {
     font-size: 2rem;
 }
 
-.country__list .container .row .country__box .country__details ul {
+.country__list .container .row .country__box .country__details div {
     margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
-.country__list .container .row .country__box .country__details ul li span {
+.country__list .container .row .country__box .country__details span {
     font-weight: 600;
 }
 
 /*End Country List Section*/
+/*Start Details Page*/
+.country__details .container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.country__details .container .btn__container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    max-width: 10rem;
+    box-shadow: 0 -.2rem 1.5rem rgba(0 0 0 / 10%);
+}
+
+.country__details .container .btn__container button {
+    border: none;
+    outline: none;
+    background-color: var(--white);
+    color: var(--darkBlueText);
+    cursor: pointer;
+}
+
+.country__details .container .row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.country__details .container .row .image__container img {
+    width: 100%;
+}
+
+.country__details .container .row .country-details h4 {
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+.country__details .container .row .country-details .details {
+    margin-top: 2rem;
+}
+
+.country__details .container .row .country-details .details ul {}
+
+.country__details .container .row .country-details .details ul li {
+    padding: .5rem 0;
+}
+
+.country__details .container .row .country-details .details ul li strong {
+    text-transform: capitalize;
+}
+
+.country__details .container .row .country-details .details ul li span {
+    font-weight: 600;
+}
+
+.country__details .row .country-details .details .border__countries {
+    margin-top: 2rem;
+}
+
+.country__details .row .country-details .details .border__countries h5 {
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.country__details .row .country-details .details .border__countries .border__content {
+    display: flex;
+    align-items: center;
+}
+
+.country__details .row .country-details .details .border__countries .border__content span {
+    padding: .5rem 3rem;
+    font-weight: 600;
+    border-radius: .5rem;
+    text-transform: capitalize;
+    box-shadow: 0 -.2rem 1.5rem rgba(0 0 0 / 10%);
+    cursor: pointer;
+}
+
+/*End Details Page*/
 /*Responsive*/
 @media(min-width: 768px) {
     .search__box .container form {
@@ -286,5 +368,51 @@ main {
 
     .search__box .container form .form__group .form__title {
         gap: 2rem;
+    }
+
+    .country__details .container .row {
+        flex-direction: row;
+    }
+
+    .country__details .container .row .image__container,
+    .country__details .container .row .country-details {
+        flex: 0 0 50%;
+    }
+}
+
+@media(min-width: 992px) {
+    .country__details .container .row {
+        gap: 0;
+    }
+
+    .country__details .row .country-details .details .list__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .country__details .row .country-details .details .border__countries {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .country__details .row .country-details .details .border__countries h5 {
+        margin: 0;
+    }
+
+    .country__details .row .country-details .details .border__countries .border__content {
+        gap: 1rem;
+    }
+
+    .country__details .row .country-details .details .border__countries {
+        margin-top: 8rem;
+    }
+
+    .country__details .container .row .image__container {
+        padding-right: 5rem;
+    }
+
+    .country__details .container .row .country-details {
+        padding-left: 5rem;
     }
 }
